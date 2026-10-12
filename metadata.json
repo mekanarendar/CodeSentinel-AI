@@ -1,0 +1,6 @@
+{
+  "name": "CodeSentinel AI - Next-Gen AI Code Reviewer & Project Security Platform",
+  "description": "Enterprise-grade AI code reviewer and multi-file project analysis platform with deterministic and AI vulnerability detection, quality scoring, and JWT authentication.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
