@@ -1,4 +1,4 @@
-import { CodeReviewRequest, ProjectReviewRequest } from './providerInterface.ts';
+import type { CodeReviewRequest, ProjectReviewRequest } from './providerInterface.ts';
 
 export const PromptBuilder = {
   buildSingleFilePrompt(request: CodeReviewRequest): { systemInstruction: string; userPrompt: string } {

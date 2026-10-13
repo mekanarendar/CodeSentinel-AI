@@ -1,5 +1,6 @@
 import type { Request, Response, NextFunction } from 'express';
-import { ZodSchema, ZodError } from 'zod';
+import { ZodError } from 'zod';
+import type { ZodSchema } from 'zod';
 import { sendError } from '../utils/apiResponse.ts';
 
 export function validateBody(schema: ZodSchema) {

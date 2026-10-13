@@ -1,7 +1,7 @@
 import { GoogleGenAI } from '@google/genai';
 import { env } from '../../config/env.ts';
 import { logger } from '../../utils/logger.ts';
-import {
+import type {
   IAIProvider,
   CodeReviewRequest,
   ProjectReviewRequest,

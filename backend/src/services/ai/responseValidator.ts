@@ -1,7 +1,7 @@
 import { z } from 'zod';
-import { IFinding } from '../../models/Review.ts';
+import type { IFinding } from '../../models/Review.ts';
 import { calculateQualityScore } from '../scoringService.ts';
-import { ReviewResponseData } from './providerInterface.ts';
+import type { ReviewResponseData } from './providerInterface.ts';
 
 const findingSchema = z.object({
   id: z.string().optional(),

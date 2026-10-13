@@ -53,7 +53,7 @@
 ## 🚀 Quick Start Guide
 
 ### 1. Prerequisites
-- Node.js 20+ installed
+- Node.js 22.18+ installed (the production server uses Node's native TypeScript support)
 - MongoDB installed locally or a free MongoDB Atlas connection string (or use the automatic high-fidelity in-memory storage fallback)
 
 ### 2. Installation
@@ -67,21 +67,17 @@ npm install
 ```
 
 ### 3. Environment Configuration
-Copy `.env.example` to `.env`:
-```bash
-cp .env.example .env
-```
-Fill in your local configuration:
+Create a root `.env` file only if you need to override the local defaults:
 ```env
 PORT=3000
 NODE_ENV=development
 MONGODB_URI=mongodb://localhost:27017/codesentinel
-JWT_ACCESS_SECRET=your_32_character_random_access_secret_here
-JWT_REFRESH_SECRET=your_32_character_random_refresh_secret_here
 AI_PROVIDER=gemini
 AI_MODEL=gemini-2.5-flash
 GEMINI_API_KEY=YOUR_GEMINI_API_KEY
 ```
+
+For production, set `MONGODB_URI` and `JWT_ACCESS_SECRET` in the deployment environment. The access-token secret must contain at least 32 non-whitespace characters. Refresh tokens are random opaque values stored as hashes, so they do not use a separate JWT signing secret. The server refuses to start in production if the required values are missing or invalid, or if MongoDB cannot be reached. Development runs generate a temporary access-token secret when none is provided.
 
 ### 4. Running the Application
 ```bash

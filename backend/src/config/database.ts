@@ -28,7 +28,7 @@ export async function connectDatabase(): Promise<DatabaseStatus> {
 
   // Attempt real connection with short initial timeout so server starts rapidly
   try {
-    logger.info('Connecting to MongoDB...', { uri: env.MONGODB_URI.replace(/\/\/([^:]+):([^@]+)@/, '//$1:****@') });
+    logger.info('Connecting to MongoDB...');
     
     // Setting short server selection timeout for local fallback resilience
     await mongoose.connect(env.MONGODB_URI, {
@@ -60,9 +60,12 @@ export async function connectDatabase(): Promise<DatabaseStatus> {
 
     return dbStatus;
   } catch (error) {
-    logger.warn('Local MongoDB daemon not reachable. Enabling high-fidelity memory fallback store for seamless local execution.', {
-      error: error instanceof Error ? error.message : String(error),
-    });
+    const errorName = error instanceof Error ? error.name : 'UnknownError';
+    logger.warn('Unable to connect to MongoDB.', { errorName });
+
+    if (env.NODE_ENV === 'production') {
+      throw new Error('MongoDB connection failed; production startup requires persistent storage.');
+    }
 
     dbStatus = {
       isConnected: true,

@@ -1,4 +1,4 @@
-import { IReview, IFinding } from '../models/Review.ts';
+import type { IReview, IFinding } from '../models/Review.ts';
 
 export interface ReviewComparisonResult {
   baselineReviewId: string;

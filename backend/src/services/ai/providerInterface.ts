@@ -1,4 +1,4 @@
-import { IFinding } from '../../models/Review.ts';
+import type { IFinding } from '../../models/Review.ts';
 
 export interface CodeReviewRequest {
   code: string;

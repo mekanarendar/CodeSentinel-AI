@@ -1,6 +1,7 @@
 import AdmZip from 'adm-zip';
 import path from 'path';
-import { redactSecrets, DetectedSecret } from './secretRedactor.ts';
+import { redactSecrets } from './secretRedactor.ts';
+import type { DetectedSecret } from './secretRedactor.ts';
 
 export interface ExtractedFile {
   path: string;

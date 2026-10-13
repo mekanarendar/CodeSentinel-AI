@@ -1,9 +1,14 @@
 import mongoose, { Types } from 'mongoose';
-import { UserModel, IUser } from './User.ts';
-import { SessionModel, ISession } from './Session.ts';
-import { ProjectModel, IProject } from './Project.ts';
-import { ReviewModel, IReview } from './Review.ts';
-import { AuditEventModel, IAuditEvent } from './AuditEvent.ts';
+import { UserModel } from './User.ts';
+import type { IUser } from './User.ts';
+import { SessionModel } from './Session.ts';
+import type { ISession } from './Session.ts';
+import { ProjectModel } from './Project.ts';
+import type { IProject } from './Project.ts';
+import { ReviewModel } from './Review.ts';
+import type { IReview } from './Review.ts';
+import { AuditEventModel } from './AuditEvent.ts';
+import type { IAuditEvent } from './AuditEvent.ts';
 import { getDatabaseStatus } from '../config/database.ts';
 
 // In-Memory Storage maps
