@@ -1,4 +1,4 @@
-import { Request, Response } from 'express';
+import type { Request, Response } from 'express';
 import { z } from 'zod';
 import { DataStore } from '../models/dataStore.ts';
 import { sendSuccess, sendError } from '../utils/apiResponse.ts';

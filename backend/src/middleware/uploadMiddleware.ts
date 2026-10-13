@@ -1,5 +1,5 @@
 import multer from 'multer';
-import { Request } from 'express';
+import type { Request } from 'express';
 import { env } from '../config/env.ts';
 
 // Use memory storage for fast, isolated processing without leaving orphaned files on disk

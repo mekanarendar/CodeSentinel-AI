@@ -20,7 +20,7 @@ import { Review, Project } from '../types/index.ts';
 
 const SAMPLE_CODES: Record<string, string> = {
   typescript: `// Sample: Payment processor with vulnerabilities
-import { Request, Response } from 'express';
+import type { Request, Response } from 'express';
 
 export async function processPayment(req: Request, res: Response) {
   const { userId, amount, cardNumber, cvv } = req.body;
