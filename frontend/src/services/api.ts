@@ -36,7 +36,7 @@ export const tokenStorage = {
 };
 
 class ApiService {
-  private baseUrl = 'https://codesentinel-ai-qrd2.onrender.com/api';
+  private baseUrl = 'https://codesentinel-ai-qrd2.onrender.com/api/v1';
 
   private async request<T>(
     endpoint: string,
